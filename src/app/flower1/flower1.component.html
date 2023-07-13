@@ -1,0 +1,293 @@
+<div *ngIf="flow">
+    <div class="row" style="margin-top: 15px;margin-left: 15px;">
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top"
+                    src="https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg?cs=srgb&dl=pexels-pixabay-56866.jpg&fm=jpg"
+                    alt="Card image cap" width="287" height="200">
+
+                <div class="card-body">
+
+                    <p class="card-text"><span style="color: blue;font-weight:100px;">Plant Name:</span>Rose</p>
+                    <p class="card-text"><span style="color: blue;font-weight:100px;">Plant Type:</span>Flower</p>
+
+                    <p class="card-text"><span style="color: blue;font-weight:100px;">Plant Cost:</span>50$</p>
+                </div>
+
+
+                <div class="card-body">
+                    <div><a class="list-group-item list-group-item-action" routerLink="order" routerLinkActive="active"
+                            class="btn btn-danger" (click)="Order()">Order</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top"
+                    src="https://media.istockphoto.com/id/969978538/photo/field-of-sunflowers-with-blue-sky.jpg?s=612x612&w=0&k=20&c=IUKrtPcL_gDPgX7UdM0SUsMVCc3iVdrUz0WqRnbOGjM="
+                    alt="Card image cap" width="287" height="200">
+                <div class="card-body">
+                    <div class="card-body">
+
+                        <p class="card-text"><span style="color: blue;font-weight:100px;">Plant Name</span> Sun Rose</p>
+                        <p class="card-text"><span style="color: blue;font-weight:100px;">Plant Type</span>Flower</p>
+
+                        <p class="card-text"><span style="color: blue;font-weight:100px;">Plant Cost</span>50$</p>
+                    </div>
+
+
+                    <div class="card-body">
+                        <button type="button" class="btn btn-danger"> Order</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 20rem;">
+                <img class="card-img-top"
+                    src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSqfmuNYZsgYqCakDnpUpDUb18ndneVPagLtnYKtcMtzjVtUWULMM5cy7d-Gt5IEK8v3w9zYi5R9VEHjFQ"
+                    alt="Card image cap" width="287" height="200">
+                <div class="card-body">
+                    <div class="card-body">
+
+                        <p class="card-text"><span style="color: blue;font-weight:100px;">Plant Name</span>Hydrangea
+                            plant
+                        </p>
+                        <p class="card-text"><span style="color: blue;font-weight:100px;">Plant Type</span>Flower</p>
+
+                        <p class="card-text"><span style="color: blue;font-weight:100px;">Plant Cost</span>50$</p>
+                    </div>
+
+
+                    <div class="card-body">
+                        <button type="button" class="btn btn-danger"> Order</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="order">
+
+    <div class="container">
+<br/>
+        <h2 class="color:green">Enter Your Details </h2>
+        <div class="row ">
+            <div class="col-lg-7 mx-auto">
+                <div class="card mt-2 mx-auto p-4 bg-light">
+                    <div class="card-body bg-light">
+
+                        <div class="container">
+                            <form id="contact-form" role="form">
+
+
+                                <div class="controls">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form_name">Firstname *</label>
+                                                <input id="form_name" type="text" name="name" class="form-control"
+                                                    placeholder="Please enter your firstname *" required="required"
+                                                    data-error="Firstname is required.">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form_lastname">Lastname *</label>
+                                                <input id="form_lastname" type="text" name="surname"
+                                                    class="form-control" placeholder="Please enter your lastname *"
+                                                    required="required" data-error="Lastname is required.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form_email">Email *</label>
+                                                <input id="form_email" type="email" name="email" class="form-control"
+                                                    placeholder="Please enter your email *" required="required"
+                                                    data-error="Valid email is required.">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="form_need">Please specify your need *</label>
+                                                <select id="form_need" name="need" class="form-control"
+                                                    required="required" data-error="Please specify your need.">
+                                                    <option value="" selected disabled>--Select Your Issue--</option>
+                                                    <option>Request Invoice for order</option>
+                                                    <option>Request order status</option>
+                                                    <option>Haven't received cashback yet</option>
+                                                    <option>Other</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="form_message">Message *</label>
+                                                <textarea id="form_message" name="message" class="form-control"
+                                                    placeholder="Write your message here." rows="4" required="required"
+                                                    data-error="Please, leave us a message."></textarea>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="col-md-12">
+
+                                            <button type="submit" class="btn btn-success btn-send  pt-2 btn-block" value="Next" (click)="payment()">Next</button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- /.8 -->
+
+            </div>
+           
+
+        </div>
+    </div>
+
+
+</div>
+<div *ngIf="pay">
+    <div class="container py-5">
+
+        <!-- For demo purpose -->
+     
+      
+      
+        <div class="row">
+          <div class="col-lg-7 mx-auto">
+            <div class="bg-white rounded-lg shadow-sm p-5">
+              <!-- Credit card form tabs -->
+              <ul role="tablist" class="nav bg-light nav-pills rounded-pill nav-fill mb-3">
+                <li class="nav-item">
+                  <a data-toggle="pill" href="#nav-tab-card" class="nav-link active rounded-pill">
+                                      <i class="fa fa-credit-card"></i>
+                                      Credit Card
+                                  </a>
+                </li>
+                <li class="nav-item">
+                  <a data-toggle="pill" href="#nav-tab-paypal" class="nav-link rounded-pill">
+                                      <i class="fa fa-paypal"></i>
+                                      Paypal
+                                  </a>
+                </li>
+                <li class="nav-item">
+                  <a data-toggle="pill" href="#nav-tab-bank" class="nav-link rounded-pill">
+                                      <i class="fa fa-university"></i>
+                                       Bank Transfer
+                                   </a>
+                </li>
+              </ul>
+              <!-- End -->
+      
+      
+              <!-- Credit card form content -->
+              <div class="tab-content">
+      
+                <!-- credit card info-->
+                <div id="nav-tab-card" class="tab-pane fade show active">
+                  <p class="alert alert-success">Some text success or error</p>
+                  <form role="form">
+                    <div class="form-group">
+                      <label for="username">Full name (on the card)</label>
+                      <input type="text" name="username" placeholder="Jason Doe" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <label for="cardNumber">Card number</label>
+                      <div class="input-group">
+                        <input type="text" name="cardNumber" placeholder="Your card number" class="form-control" required>
+                        <div class="input-group-append">
+                          <span class="input-group-text text-muted">
+                                                      <i class="fa fa-cc-visa mx-1"></i>
+                                                      <i class="fa fa-cc-amex mx-1"></i>
+                                                      <i class="fa fa-cc-mastercard mx-1"></i>
+                                                  </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <div class="form-group">
+                          <label><span class="hidden-xs">Expiration</span></label>
+                          <div class="input-group">
+                            <input type="number" placeholder="MM" name="" class="form-control" required>
+                            <input type="number" placeholder="YY" name="" class="form-control" required>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <div class="form-group mb-4">
+                          <label data-toggle="tooltip" title="Three-digits code on the back of your card">CVV
+                                                      <i class="fa fa-question-circle"></i>
+                                                  </label>
+                          <input type="text" required class="form-control">
+                        </div>
+                      </div>
+      
+      
+      
+                    </div>
+                    <button type="button" class="subscribe btn btn-primary btn-block rounded-pill shadow-sm"> Confirm  </button>
+                  </form>
+                </div>
+                <!-- End -->
+      
+                <!-- Paypal info -->
+                <div id="nav-tab-paypal" class="tab-pane fade">
+                  <p>Paypal is easiest way to pay online</p>
+                  <p>
+                    <button type="button" class="btn btn-primary rounded-pill"><i class="fa fa-paypal mr-2"></i> Log into my Paypal</button>
+                  </p>
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <!-- End -->
+      
+                <!-- bank transfer info -->
+                <div id="nav-tab-bank" class="tab-pane fade">
+                  <h6>Bank account details</h6>
+                  <dl>
+                    <dt>Bank</dt>
+                    <dd> THE WORLD BANK</dd>
+                  </dl>
+                  <dl>
+                    <dt>Account number</dt>
+                    <dd>7775877975</dd>
+                  </dl>
+                  <dl>
+                    <dt>IBAN</dt>
+                    <dd>CZ7775877975656</dd>
+                  </dl>
+                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <!-- End -->
+              </div>
+              <!-- End -->
+      
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

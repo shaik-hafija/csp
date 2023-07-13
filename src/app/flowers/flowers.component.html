@@ -1,0 +1,18 @@
+<p>........</p>
+<button class="btn btn-danger m-2" (click)="Flowers()">Flowers</button>
+
+<div *ngIf="!(flower.length==0)" class="grid">
+    <div *ngFor="let Eachflower of flower" >
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" [src]="Eachflower.p_image" alt="Flower Img">
+            <div class="card-body">
+                <h5 class="card-title">{{Eachflower.p_name}},{{Eachflower.p_id}}</h5>
+                <p class="card-text">{{Eachflower.p_type}}</p>
+                <p class="card-text">{{Eachflower.p_cost}}</p>
+                <a href="#" class="btn btn-primary">Order Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+<h1>helllooo</h1>
+<router-outlet></router-outlet>
