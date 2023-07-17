@@ -4,36 +4,55 @@
             <h3>Sell your plant here</h3>
             <div class="card">
                 <h5 class="text-center mb-4" style="color: green;">Spread Greenary</h5>
-                <form class="form-card">
+                <form class="form-card" #r="ngForm" (ngSubmit)="Insert(r)">
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Plant Id<span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="Enter plant id" [(ngModel)]="User.p_id" name="p_id">
+                            <input type="text" placeholder="Enter plant id"  ngModel required name="p_id">
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">plant image url<span class="text-danger">
                                     *</span></label> <input type="text" placeholder="Enter plant image url"
-                                [(ngModel)]="User.p_image" name="p_image"> </div>
+                                    ngModel required name="p_image"> </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">plant Name <span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="" [(ngModel)]="User.p_name" name="p_name">
+                            <input type="text" placeholder=""  ngModel required name="p_name">
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">Plant type<span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="" [(ngModel)]="User.p_type" name="p_type">
+                            <input type="text" placeholder=""  ngModel required name="p_type">
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex"> <label
                                 class="form-control-label px-3">plant cost<span class="text-danger"> *</span></label>
-                            <input type="text" placeholder="" [(ngModel)]="User.p_cost" name="p_cost">
+                            <input type="text" name="p_cost" placeholder=""  ngModel required >
                         </div>
                     </div>
 
                     <div class="row justify-content-end">
-                        <input type="submit" value="Insert" class="btn btn-success my-2" (click)="Insert()">
+                        <input type="submit" value="Insert" class="btn btn-success my-2"  data-toggle="modal" data-target="#sell"   [disabled]="r.invalid"> 
+                        <div class="modal fade" id="sell">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        
+                                        <button class="btn btn-danger" data-dismiss="modal">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2 style="font-family: 'Times New Roman', Times, serif;">successfully uploaded your {{User.p_name}} plant</h2>
+                                    </div>
+                                    <div class="modal-footer">
+    
+                                        <button class="btn btn-success" data-dismiss="modal">Ok</button>
+                                    </div>  
+    
+                                   
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>

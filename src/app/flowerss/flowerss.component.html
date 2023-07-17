@@ -1,0 +1,53 @@
+<button class="btn btn-danger m-2" (click)="Read()">Flowers</button>
+<div *ngIf="show">
+    <div *ngIf="!(a.length==0)" class="grid-container">
+        <div *ngFor="let Eachflower of a">
+            <div class="card" style="width: 18rem;">
+
+                <img [src]="Eachflower[1]" alt="Image" style="height: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"> Name:{{Eachflower[2]}}</h5>
+                    <p class="card-text">Plant Id:{{Eachflower[0]}}</p>
+                    <p class="card-text">Plant Type:{{Eachflower[3]}}</p>
+                    <p class="card-text">Plant Cost:{{Eachflower[4]}}</p>
+                    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#more">MoreInfo</a>&nbsp;
+                    <div class="modal fade" id="more">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="w-100 text-center mt-2"
+                                        style="color: blueviolet;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                                        MoreInfo</h3>
+                                    <button class="btn btn-danger" data-dismiss="modal">×</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <p><b style="font-size: x-large;color: blueviolet;"> Soil water:</b> content was
+                                            kept at field
+                                            capacity by daily waterings as
+                                            determined by tensiometer readings.</p>
+                                        <p><b style="font-size: x-large;color: blueviolet;"> Watering:</b> content was
+                                            kept at field
+                                            capacity by daily waterings as
+                                            determined by tensiometer readings.</p>
+                                        <p><b style="font-size: x-large;color: blueviolet;"> Fertilizer:</b> content was
+                                            kept at field
+                                            capacity by daily waterings as
+                                            determined by tensiometer readings.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+
+                                    <button class="btn btn-success" data-dismiss="modal">Ok</button>
+                                </div>
+
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" routerLink="/form" routerLinkActive="active">Order Now</a>
+                </div>
+            </div>
+      </div>
+    </div>
+</div>

@@ -9,8 +9,11 @@ import { FlowersComponent } from './flowers/flowers.component';
 import { SellComponent } from './sell/sell.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Flower1Component } from './flower1/flower1.component';
 import { OrderComponent } from './order/order.component';
+import { MainComponent } from './main/main.component';
+import { FlowerssComponent } from './flowerss/flowerss.component';
+import { FormComponent } from './form/form.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -21,8 +24,16 @@ import { OrderComponent } from './order/order.component';
     TimelineComponent,
     FlowersComponent,
     SellComponent,
-    Flower1Component,
-    OrderComponent
+  
+    OrderComponent,
+ 
+    MainComponent,
+ 
+    FlowerssComponent,
+ 
+    FormComponent,
+ 
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,8 @@ export class FlowersComponent implements OnInit, OnDestroy {
 
   constructor(private flowerservice: FlowerservicwService, private Subscription: Subscription) { }
   ptype: String = 'flower';
-  flower: any[any] = [];
+  flow=false;
+  flower: any = [];
   subscription: Subscription
 
   Flowers() {
@@ -23,6 +24,7 @@ export class FlowersComponent implements OnInit, OnDestroy {
         next: (Data) => {
           console.log(Data);
           this.flower = Data;
+          this.flow=true;
         },
         error: (Err) => {
           console.log(Err);

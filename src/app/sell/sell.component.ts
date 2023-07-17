@@ -7,6 +7,8 @@ import {
 } from '../flower';
 import { Subscription } from 'rxjs';
 import { FlowerservicwService } from '../flowerservicw.service'
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-sell',
@@ -27,20 +29,24 @@ export class SellComponent implements OnInit, OnDestroy {
   };
   SuccessMsg = '';
   ErrorMsg = '';
-  Insert() {
+  Insert(Form: NgForm) {
+    console.log(Form.value);
     this.ErrorMsg = '';
     this.SuccessMsg = '';
 
-    this.Subscription = this.Service.Insert(this.User).subscribe(
-      (data) => {
-        if (data) {
-          console.log(data);
-          
+    this.Subscription = this.Service.Insert(Form.value).subscribe(
+     {
+      next: (Data: InsertedSuccess | UniqueConstraintError) => {
+        if ('errorNum' in Data) {
+          this.ErrorMsg = `${this.User.p_id} alredy Exists`;
+        } else {
+          this.SuccessMsg = `${this.User.p_name} Inserted Succesfully`;
+          console.log(this.SuccessMsg);
+         
         }
-        else {
-          console.log("Failed");
-        }
+        Form.reset();
       }
+    }
     )
   }
 
