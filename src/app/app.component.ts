@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Logininterface, Signupinterface, Flower, UniqueConstraintError, InsertedSuccess } from './flower';
+import { Logininterface, Signupinterface, Flower, UniqueConstraintError, InsertedSuccess, search } from './flower';
 import { Subscription } from 'rxjs';
 import { NgForm } from '@angular/forms';
 
@@ -16,8 +16,10 @@ export class AppComponent implements OnDestroy, OnInit {
   c = false;//registration
   d = false;//login
   e = false;//home page
+  f=false;//starting page
   error = false;
   title = 'csp';
+  view=false;
   signin() {
     this.a = false;
     this.c = true;
@@ -39,6 +41,9 @@ export class AppComponent implements OnDestroy, OnInit {
     email: '',
     password: ''
   }
+  wow:search={
+    p_name:''
+  }
 logout()
 {
   this.a=true;
@@ -47,6 +52,17 @@ logout()
   this.e=false;
   
 
+}
+view1()
+{
+  this.view=true;
+  
+  this.f=false;
+  
+}
+view2()
+{
+ this.view=false; 
 }
   readarray = [];
   ngOnInit(): void { }
@@ -83,6 +99,7 @@ logout()
             this.e = true;
             this.c = false;
             this.d = false;
+            this.f=true;
           }
           else {
             this.error = true;
@@ -92,6 +109,16 @@ logout()
           this.error = true;
 
         }
+      })
+  }
+  search(Form: NgForm) {
+    console.log(Form.value.search);
+    this.Subscription = this.service.Sread(Form.value.search).subscribe(
+      (data: any) => {
+        // console.log(Form.value.search);
+        this.readarray = data;
+        console.log(this.readarray);
+        
       })
   }
   ngOnDestroy() {

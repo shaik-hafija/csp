@@ -8,7 +8,8 @@
     </div>
     <!-- <p *ngIf="!(Results.length==0 && !GotResult)" class="text-danger">No Result to Show</p> -->
 </div>
-<table class="table w-50  mx-auto" >
+
+<table class="table w-50  mx-auto">
     <thead class="thead-dark">
         <tr>
             <th scope="col">plant ID</th>
@@ -18,11 +19,12 @@
             <th scope="col">plant cost</th>
             <th scope="col">Read</th>
             <th scope="col">Update</th>
-          
+
 
         </tr>
     </thead>
     <tbody>
+       
         <tr *ngFor="let Data of Results2">
             <th scope="row">{{Data[0]}}</th>
             <!-- <th>{{Data[1]}}</th> -->
@@ -70,6 +72,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- <div class="modal fade" id="example1Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

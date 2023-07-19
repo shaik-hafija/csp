@@ -33,16 +33,19 @@
 
                                 </div>
 
-                                <div class="row justify-content-center my-3 px-3" routerLink="home">
+                                <div class="row justify-content-center my-3 px-3" routerLink="home" >
                                     <!-- <button class="btn-block btn-color"><a (click)="frontend()">Login to
                                             Plants</a></button> -->
                                     <input class="btn btn-success" type="submit" value="submit" [disabled]="r.invalid"
-                                        (click)="Read()" >
+                                        (click)="Read()">
                                     <!-- (click)="frontend()" -->
                                 </div>
                             </form>
                             <div class="row justify-content-center my-2">
-                                <a href="#"><small class="text-muted">Forgot Password?</small></a>&nbsp; Not a member ? <a href="#"><div  (click)="signin()" style="color: rgb(46, 42, 243);">Create Account</div></a>
+                                <a href="#"><small class="text-muted">Forgot Password?</small></a>&nbsp; Not a member ?
+                                <a href="#">
+                                    <div (click)="signin()" style="color: rgb(46, 42, 243);">Create Account</div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +61,7 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
 
 
 
@@ -103,7 +106,7 @@
 </div>
 <!-- Registration form -->
 <div *ngIf="c">
-   
+
 
     <section class="vh-100" style="background-color: #eee;">
         <div class="container h-100">
@@ -130,7 +133,7 @@
                                                             Enter your name
                                                         </div>
                                                     </div> -->
-    
+
                                             </div>
                                         </div>
 
@@ -167,7 +170,9 @@
                                             <input class="btn btn-success" type="submit" value="submit"
                                                 [disabled]="r.invalid">
                                         </div>
-                                        <div (click)="login()"><a href="#" style="color: rgb(232, 51, 63);font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Now Login</a></div>
+                                        <div (click)="login()"><a href="#"
+                                                style="color: rgb(232, 51, 63);font-weight: bolder;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Now
+                                                Login</a></div>
 
                                     </form>
 
@@ -195,7 +200,12 @@
 
         <div class="main-search-input-wrap ms-auto p-1">
             <div class="main-search-input fl-wrap">
-               <button class="btn btn-danger" (click)="logout()">Logout</button>
+                <!-- <button class="btn btn-danger" (click)="logout()">Logout</button> -->
+                <form class="form-inline my-2 my-lg-0" #r="ngForm" (ngSubmit)="search(r)">
+                    <input type="text" class="form-control mr-sm-2" name="search"  placeholder="Search"  ngModel
+                        required />
+                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit"(click)="view1()" >Search</button>
+                </form>
             </div>
         </div>
     </div>
@@ -203,8 +213,8 @@
     <div class="container-fluid text-center ">
 
         <div class="row border p-2" style="font-size: x-large;" id="topnav">
-            <div class="col"><a class="navbar-brand activity" href="#" style="color: GREEN; font-weight:bold;font-size: x-large;"
-                    routerLink="home">Home</a></div>
+            <div class="col"><a class="navbar-brand activity" href="#"
+                    style="color: GREEN; font-weight:bold;font-size: x-large;" routerLink="home">Home</a></div>
             <div class="col">
                 <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"
                     style="color: GREEN; font-weight:bold;">Plant types</a>
@@ -215,7 +225,7 @@
                         <div class="row my-3">
                             <div class="col-md-6 col-lg-3 mb-3 mb-lg-0 ">
                                 <div class="list-group list-group-flush">
-                                    <a class="list-group-item list-group-item-action" routerLink="/flowerss"
+                                    <a class="list-group-item list-group-item-action" routerLink="/flowerr"
                                         routerLinkActive="active">Flowers</a>
                                     <a href="" class="list-group-item list-group-item-action">Dolor sit</a>
                                     <a href="" class="list-group-item list-group-item-action">Amet consectetur</a>
@@ -241,26 +251,29 @@
                                     <a href="" class="list-group-item list-group-item-action">Laboriosam</a>
                                 </div>
                             </div> -->
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col"><a class="navbar-brand" href="#" style="color: GREEN;font-weight:bold;font-size: x-large;"routerLink="about">About Us
-                    </a></div>
-             
- <div class="col"><a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"
-        style="color: GREEN;font-weight:bold;">Sell here</a>
-    <ul class="dropdown-menu">
-        <li class="dropdown-item" routerLink="sell">Upload</li>
-        <li class="dropdown-item" routerLink="main">View</li>
-        
+            <div class="col"><a class="navbar-brand" href="#" style="color: GREEN;font-weight:bold;font-size: x-large;"
+                    routerLink="about">About Us
+                </a></div>
 
-    </ul>
+            <div class="col"><a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"
+                    style="color: GREEN;font-weight:bold;">Sell Or Buy</a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item" routerLink="sell">sell here</li>
+                    <li class="dropdown-item" routerLink="flowerss">buy here</li>
+                    <li class="dropdown-item" routerLink="main">View</li>
 
 
-</div>
-            <div class="col"><a class="navbar-brand" href="#" style="color: GREEN; font-weight:bold;font-size: x-large;">Contact Us</a>
+                </ul>
+
+
+            </div>
+            <div class="col"><a class="navbar-brand" href="#"
+                    style="color: GREEN; font-weight:bold;font-size: x-large;" routerLink="contactus">Contact Us</a>
             </div>
             <div class="col"><a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"
                     style="color: GREEN;font-weight:bold;">Village</a>
@@ -273,10 +286,87 @@
 
 
             </div>
+            <div class="col">
+                <a href="#" class="nav-link active dropdown-toggle" data-bs-toggle="dropdown"   style="color: GREEN;font-weight:bold;">Seasonaly</a>
+                <div class="dropdown-menu w-20 mt-0" aria-labelledby="navbarDropdown">
+
+                    <div class="container">
+                        <div class="row my-3">
+
+                            <div class="list-group list-group-flush">
+                                <a routerLink="/summer" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Summer</a>
+                                <a routerLink="/winter" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Winter</a>
+                                <a routerLink="/spring" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Spring</a>
+                                <a routerLink="/autumn" routerLinkActive="active"
+                                    class="list-group-item list-group-item-action">Autumn</a>
+
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            
+            <!-- <div class="col"> <button class="btn btn-danger" (click)="logout()">Logout</button></div> -->
 
         </div>
     </div>
 
+<div *ngIf="view">
+    <div *ngIf="!(a.length==0)" class="grid-container">
+        <div *ngFor="let Eachflower of readarray">
+            <div class="card" style="width: 18rem;">
+
+                <img [src]="Eachflower[1]" alt="Image" style="height: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"> Name:{{Eachflower[2]}}</h5>
+                    <p class="card-text">Plant Id:{{Eachflower[0]}}</p>
+                    <p class="card-text">Plant Type:{{Eachflower[3]}}</p>
+                    <p class="card-text">Plant Cost:{{Eachflower[4]}}</p>
+                    <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#more">MoreInfo</a>&nbsp;
+                    <div class="modal fade" id="more">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="w-100 text-center mt-2"
+                                        style="color: blueviolet;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                                        MoreInfo</h3>
+                                    <button class="btn btn-danger" data-dismiss="modal">×</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <p><b style="font-size: x-large;color: blueviolet;"> Soil water:</b> content was
+                                            kept at field
+                                            capacity by daily waterings as
+                                            determined by tensiometer readings.</p>
+                                        <p><b style="font-size: x-large;color: blueviolet;"> Watering:</b> content was
+                                            kept at field
+                                            capacity by daily waterings as
+                                            determined by tensiometer readings.</p>
+                                        <p><b style="font-size: x-large;color: blueviolet;"> Fertilizer:</b> content was
+                                            kept at field
+                                            capacity by daily waterings as
+                                            determined by tensiometer readings.</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+
+                                    <button class="btn btn-success" data-dismiss="modal">Ok</button>
+                                </div>
+
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" routerLink="/form" routerLinkActive="active">Order Now</a>
+                </div>
+            </div>
+      </div>
+    </div>
+    <button class="btn btn-success my-2" routerLink="home" (click)="view2()">OK</button>
+
+</div>
 
 
-<router-outlet></router-outlet>
+    <router-outlet></router-outlet>

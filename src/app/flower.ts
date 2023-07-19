@@ -31,3 +31,7 @@ export interface Flower {
     password:String;
     
   }
+  export interface search
+  {
+    p_name:string;
+  }

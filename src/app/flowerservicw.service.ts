@@ -69,4 +69,7 @@ export class FlowerservicwService {
   Read2(p_type: String): Observable<Read> {
     return this.http.get<Read>(`${this.url}plants/Read${p_type}`);
   }
+  Sread(p_name:String):Observable<Read>{
+    return this.http.get<Read>(`${this.url}plants/Read${p_name}`)
+  }
 }

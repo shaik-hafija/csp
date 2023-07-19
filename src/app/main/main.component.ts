@@ -14,6 +14,7 @@ export class MainComponent implements OnInit {
   constructor(private Service:FlowerservicwService) { }
   coursename: String = '';
   GotResult: Boolean = false;
+ 
   Results2 :any= [];
   a = [];
 
@@ -69,6 +70,8 @@ export class MainComponent implements OnInit {
       next: (Data) => {
         console.log(Data);
         this.Read('All');
+      
+
       },
       error: (err) => {
         console.log(err);
